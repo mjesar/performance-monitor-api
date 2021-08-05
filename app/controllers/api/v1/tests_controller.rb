@@ -1,6 +1,12 @@
 class Api::V1::TestsController < ApplicationController
+  
   def create
-  	render json: ttfb
+    test_data = Test.new(test_params.merge(ttfb: ttfb, ttfp: ttfp, tti: tti, speed_index: speed_index))
+    if test_data.save
+      render json: test_data
+    else
+      render json: test_data.errors, status: :unprocessable_entity
+    end
   end
 
   private
@@ -26,7 +32,7 @@ class Api::V1::TestsController < ApplicationController
      performance_monitor['lighthouseResult']['audits']['interactive']['numericValue']
   end
 
-  def index_speed
-     payload['lighthouseResult']['audits']['speed-index']['numericValue']
+  def speed_index
+     performance_monitor['lighthouseResult']['audits']['speed-index']['numericValue']
   end
 end
