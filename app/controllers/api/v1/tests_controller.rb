@@ -1,7 +1,7 @@
 class Api::V1::TestsController < ApplicationController
   
   def create
-    test_data = Test.new(test_params.merge(ttfb: ttfb, ttfp: ttfp, tti: tti, speed_index: speed_index))
+    test_data = Test.new(test_params.merge(lighthouse_results))
     if test_data.save
       render json: test_data
     else
@@ -17,22 +17,15 @@ class Api::V1::TestsController < ApplicationController
 
   def performance_monitor
     response = HTTParty.get("https://www.googleapis.com/pagespeedonline/v5/runPagespeed?key=AIzaSyBXLkGtNEMKcXXjj1Kv-h8okmloFLM-h94&strategy=desktop&url=#{test_params['url']}")
-    payload = ::JSON.parse(response.body)
+    ::JSON.parse(response.body)
   end
 
-  def ttfb
-     performance_monitor['lighthouseResult']['audits']['first-contentful-paint']['numericValue']
-  end
-
-  def ttfp
-    performance_monitor['lighthouseResult']['audits']['first-meaningful-paint']['numericValue']
-  end
-
-  def tti
-     performance_monitor['lighthouseResult']['audits']['interactive']['numericValue']
-  end
-
-  def speed_index
-     performance_monitor['lighthouseResult']['audits']['speed-index']['numericValue']
+  def lighthouse_results
+    payload = performance_monitor    
+    ttfb = payload['lighthouseResult']['audits']['first-contentful-paint']['numericValue']
+    ttfp = payload['lighthouseResult']['audits']['first-meaningful-paint']['numericValue']
+    tti = payload['lighthouseResult']['audits']['interactive']['numericValue']
+    speed_index = payload['lighthouseResult']['audits']['speed-index']['numericValue']
+    { "ttfb" => ttfb, "ttfp" => ttfp, "tti" => tti, "speed_index" => speed_index}
   end
 end
