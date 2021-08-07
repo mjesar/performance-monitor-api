@@ -1,7 +1,7 @@
 class Api::TestsController < ApplicationController
+ 
   def index
-    tests = Test.where(set_url_params)
-    render json: tests
+    render json: set_tests
   end
 
   def create
@@ -15,7 +15,7 @@ class Api::TestsController < ApplicationController
   end
 
   def show
-    render json: "SHOW"
+    render json: set_tests.last
   end
 
   private
@@ -30,7 +30,7 @@ class Api::TestsController < ApplicationController
     nil
   end
 
-  def set_url_params
-    params.permit(:url)
+  def set_tests
+    Test.where(params.permit(:url))
   end
 end
