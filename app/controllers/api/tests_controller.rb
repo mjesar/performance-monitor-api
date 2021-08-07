@@ -1,4 +1,8 @@
 class Api::TestsController < ApplicationController
+  def index
+    tests = Test.where(set_url_params)
+    render json: tests
+  end
 
   def create
     speed_test_insights = speed_test_insight
