@@ -1,4 +1,9 @@
 class Api::TestsController < ApplicationController
+  def index
+    tests = Test.where(set_url_params)
+    render json: tests
+  end
+
   def create
     speed_test_insights = speed_test_insight
     test_data = Test.new(test_params.merge(speed_test_insights))
@@ -19,5 +24,9 @@ class Api::TestsController < ApplicationController
     SpeedTestInsight.new(test_params).call
   rescue StandardError
     nil
+  end
+
+  def set_url_params
+    params.permit(:url)
   end
 end
