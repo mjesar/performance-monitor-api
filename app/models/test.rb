@@ -1,5 +1,4 @@
 class Test < ApplicationRecord
-
   validates :url, presence: true
   validates :max_ttfb, presence: true
   validates :max_tti, presence: true
@@ -9,5 +8,4 @@ class Test < ApplicationRecord
   validates :ttfp, presence: true
   validates :tti, presence: true
   validates :speed_index, presence: true
-
 end
