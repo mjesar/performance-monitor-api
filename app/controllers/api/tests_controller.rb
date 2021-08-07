@@ -14,6 +14,10 @@ class Api::TestsController < ApplicationController
     end
   end
 
+  def show
+    render json: "SHOW"
+  end
+
   private
 
   def test_params
