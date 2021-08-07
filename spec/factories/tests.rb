@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :test do
-    url { "MyString" }
+    url { 'https://www.vice.com/en' }
     max_ttfb { 1 }
     max_tti { 1 }
     max_speed_index { 1 }
