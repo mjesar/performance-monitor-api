@@ -11,7 +11,7 @@ Things you may want to cover:
 
 * Database creation
    *	database: postgresSql
-   *	commads
+   *	commands
 		*	rails db:create
 		* rails db:migrate
 
@@ -25,7 +25,7 @@ Things you may want to cover:
 	* Rspec 
 
 * Services
-	* To resun test start scheduling in background using crono gem  
+	* To rerun test start scheduling in background using crono gem  
 	 	* run: bundle exec crono  RAILS_ENV=development
 	 	* current time set at 08:55pm 
 	* You can change time in cronotab.rb file
