@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Failed Test</h1>
+   <table>
+    <tr>
+        <th>key</th>
+        <th>Text</th>
+    </tr>
+    <%= @tests.each do |key, value| %>
+    <tr>
+        <td><%= key %></td>
+        <td><%= value %></td>
+     </tr>
+    <% end %>
+   </table>
+  </body>
+</html>
