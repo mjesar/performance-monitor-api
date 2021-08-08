@@ -1,0 +1,2 @@
+class TestFailedMailer < ApplicationMailer
+end
