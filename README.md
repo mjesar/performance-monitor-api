@@ -19,7 +19,6 @@ Things you may want to cover:
 	* bundle install 
 	* rails s
 
-* Database initialization
 
 * How to run the test suite
 	* Rspec 
