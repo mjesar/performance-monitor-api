@@ -13,4 +13,4 @@
 #
 # Crono.perform(TestJob).every 2.days, at: '15:30'
 #
-Crono.perform(RerunTestJob).every 10.minutes
+Crono.perform(RerunTestJob).every 1.day, at: { hour: 18, min: 35 }
