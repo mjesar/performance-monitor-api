@@ -10,6 +10,6 @@ class TestFailedMailer < ApplicationMailer
     @tti = test[:tti]
     @speed_index = test[:speed_index]
     @passed = test[:passed]
-    mail(from: 'ali@example.com', to: 'ali@example.com', subject: 'welcome')
+    mail(from: 'ali@example.com', to: 'ali@example.com', subject: 'Scheduled Test Result')
   end
 end
