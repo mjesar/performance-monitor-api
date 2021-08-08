@@ -10,12 +10,46 @@
         <th>key</th>
         <th>Text</th>
     </tr>
-    <%= @tests.each do |key, value| %>
     <tr>
-        <td><%= key %></td>
-        <td><%= value %></td>
+        <td>URL:  </td>
+        <td><%= @url %></td>
      </tr>
-    <% end %>
+     <tr>
+        <td>Max TTFB:  </td>
+        <td><%= @max_ttfb %></td>
+     </tr>
+     <tr>
+        <td>Max TTFP:  </td>
+        <td><%= @max_ttfp %></td>
+     </tr>
+     <tr>
+        <td>Max TTI:  </td>
+        <td><%= @max_tti %></td>
+     </tr>
+     <tr>
+        <td>Max Speed Index:  </td>
+        <td><%= @max_speed_index %></td>
+     </tr>
+     <tr>
+        <td>TTFB:  </td>
+        <td><%= @ttfb %></td>
+     </tr>
+     <tr>
+        <td>TTFP:  </td>
+        <td><%= @ttfp %></td>
+     </tr>
+     <tr>
+        <td>TTI:  </td>
+        <td><%= @tti %></td>
+     </tr>
+     <tr>
+        <td>Speed Index:  </td>
+        <td><%= @speed_index %></td>
+     </tr>
+     <tr>
+        <td>Passed:  </td>
+        <td><%= @passed %></td>
+     </tr>
    </table>
   </body>
 </html>
