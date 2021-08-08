@@ -1,6 +1,6 @@
 class SpeedTestInsight
   def initialize(params)
-    @params = params
+    @params = params.to_h
   end
 
   def call
@@ -26,13 +26,13 @@ class SpeedTestInsight
   end
 
   def check_test?(payload_hash)
-    if payload_hash[:ttfb] > @params[:max_ttfb].to_i
+    if payload_hash[:ttfb] > @params['max_ttfb'].to_i
       false
-    elsif payload_hash[:ttfp] > @params[:max_ttfp].to_i
+    elsif payload_hash[:ttfp] > @params['max_ttfp'].to_i
       false
-    elsif payload_hash[:tti] > @params[:max_tti].to_i
+    elsif payload_hash[:tti] > @params['max_tti'].to_i
       false
-    elsif payload_hash[:speed_index] > @params[:max_speed_index].to_i
+    elsif payload_hash[:speed_index] > @params['max_speed_index'].to_i
       false
     else
       true
