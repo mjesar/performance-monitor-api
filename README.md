@@ -21,7 +21,7 @@ Things you may want to cover:
 
 
 * How to run the test suite
-	* Rspec 
+	* rspec 
 
 * Services
 	* To rerun test start scheduling in background using crono gem  
