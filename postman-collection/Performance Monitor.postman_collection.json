@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "bc0cca1b-3a7f-4bb4-977a-e93adcf5e180",
+		"name": "Performance Monitor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "tests",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "url",
+							"value": "https://www.vice.com/en",
+							"type": "text"
+						},
+						{
+							"key": "max_ttfb",
+							"value": "990",
+							"type": "text"
+						},
+						{
+							"key": "max_ttfp",
+							"value": "990",
+							"type": "text"
+						},
+						{
+							"key": "max_tti",
+							"value": "7000",
+							"type": "text"
+						},
+						{
+							"key": "max_speed_index",
+							"value": "3000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/tests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tests"
+					],
+					"query": [
+						{
+							"key": "test[url]",
+							"value": "https://developers.google.com",
+							"disabled": true
+						},
+						{
+							"key": "test[max_ttfb]",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "test[max_tti]",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "test[max_speed_index]",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "test[max_ttfp]",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all tests for a given URL",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "url",
+							"value": "https://www.vice.com/en",
+							"type": "text"
+						},
+						{
+							"key": "max_ttfb",
+							"value": "875",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "max_tti",
+							"value": "52440",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "max_speed_index",
+							"value": "73970",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "max_ttfp",
+							"value": "5565",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/tests?url=https://www.vice.com/en",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tests"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "https://www.vice.com/en"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Last tests for a given URL Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "url",
+							"value": "https://www.vice.com/en",
+							"type": "text"
+						},
+						{
+							"key": "max_ttfb",
+							"value": "875",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "max_tti",
+							"value": "52440",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "max_speed_index",
+							"value": "73970",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "max_ttfp",
+							"value": "5565",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/tests/last?url=https://www.vice.com/en",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tests",
+						"last"
+					],
+					"query": [
+						{
+							"key": "url",
+							"value": "https://www.vice.com/en"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
